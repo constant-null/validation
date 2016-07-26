@@ -1,7 +1,7 @@
 <?php
 
 use Mockery as m;
-use Illuminate\Validation\Factory;
+use ConstantNull\Validation\Factory;
 
 class ValidationFactoryTest extends PHPUnit_Framework_TestCase
 {
@@ -19,7 +19,7 @@ class ValidationFactoryTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(['foo' => 'bar'], $validator->getData());
         $this->assertEquals(['baz' => ['boom']], $validator->getRules());
 
-        $presence = m::mock('Illuminate\Validation\PresenceVerifierInterface');
+        $presence = m::mock('ConstantNull\Validation\PresenceVerifierInterface');
         $noop1 = function () {
         };
         $noop2 = function () {
@@ -35,7 +35,7 @@ class ValidationFactoryTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(['replacer' => $noop3], $validator->getReplacers());
         $this->assertEquals($presence, $validator->getPresenceVerifier());
 
-        $presence = m::mock('Illuminate\Validation\PresenceVerifierInterface');
+        $presence = m::mock('ConstantNull\Validation\PresenceVerifierInterface');
         $factory->extend('foo', $noop1, 'foo!');
         $factory->extendImplicit('implicit', $noop2, 'implicit!');
         $factory->setPresenceVerifier($presence);
@@ -53,7 +53,7 @@ class ValidationFactoryTest extends PHPUnit_Framework_TestCase
         $factory->resolver(function ($translator, $data, $rules) {
             $_SERVER['__validator.factory'] = true;
 
-            return new Illuminate\Validation\Validator($translator, $data, $rules);
+            return new ConstantNull\Validation\Validator($translator, $data, $rules);
         });
         $validator = $factory->make(['foo' => 'bar'], ['baz' => 'boom']);
 

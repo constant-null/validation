@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Validation;
+namespace ConstantNull\Validation;
 
 use Closure;
 use Illuminate\Support\Str;
@@ -20,7 +20,7 @@ class Factory implements FactoryContract
     /**
      * The Presence Verifier implementation.
      *
-     * @var \Illuminate\Validation\PresenceVerifierInterface
+     * @var \ConstantNull\Validation\PresenceVerifierInterface
      */
     protected $verifier;
 
@@ -86,7 +86,7 @@ class Factory implements FactoryContract
      * @param  array  $rules
      * @param  array  $messages
      * @param  array  $customAttributes
-     * @return \Illuminate\Validation\Validator
+     * @return \ConstantNull\Validation\Validator
      */
     public function make(array $data, array $rules, array $messages = [], array $customAttributes = [])
     {
@@ -120,7 +120,7 @@ class Factory implements FactoryContract
      * @param  array  $customAttributes
      * @return void
      *
-     * @throws \Illuminate\Validation\ValidationException
+     * @throws \ConstantNull\Validation\ValidationException
      */
     public function validate(array $data, array $rules, array $messages = [], array $customAttributes = [])
     {
@@ -130,7 +130,7 @@ class Factory implements FactoryContract
     /**
      * Add the extensions to a validator instance.
      *
-     * @param  \Illuminate\Validation\Validator  $validator
+     * @param  \ConstantNull\Validation\Validator  $validator
      * @return void
      */
     protected function addExtensions(Validator $validator)
@@ -156,7 +156,7 @@ class Factory implements FactoryContract
      * @param  array  $rules
      * @param  array  $messages
      * @param  array  $customAttributes
-     * @return \Illuminate\Validation\Validator
+     * @return \ConstantNull\Validation\Validator
      */
     protected function resolve(array $data, array $rules, array $messages, array $customAttributes)
     {
@@ -237,7 +237,7 @@ class Factory implements FactoryContract
     /**
      * Get the Presence Verifier implementation.
      *
-     * @return \Illuminate\Validation\PresenceVerifierInterface
+     * @return \ConstantNull\Validation\PresenceVerifierInterface
      */
     public function getPresenceVerifier()
     {
@@ -247,7 +247,7 @@ class Factory implements FactoryContract
     /**
      * Set the Presence Verifier implementation.
      *
-     * @param  \Illuminate\Validation\PresenceVerifierInterface  $presenceVerifier
+     * @param  \ConstantNull\Validation\PresenceVerifierInterface  $presenceVerifier
      * @return void
      */
     public function setPresenceVerifier(PresenceVerifierInterface $presenceVerifier)

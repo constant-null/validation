@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Validation;
+namespace ConstantNull\Validation;
 
 use Closure;
 use DateTime;
@@ -33,7 +33,7 @@ class Validator implements ValidatorContract
     /**
      * The Presence Verifier implementation.
      *
-     * @var \Illuminate\Validation\PresenceVerifierInterface
+     * @var \ConstantNull\Validation\PresenceVerifierInterface
      */
     protected $presenceVerifier;
 
@@ -481,7 +481,7 @@ class Validator implements ValidatorContract
      *
      * @return void
      *
-     * @throws \Illuminate\Validation\ValidationException
+     * @throws \ConstantNull\Validation\ValidationException
      */
     public function validate()
     {
@@ -3026,7 +3026,7 @@ class Validator implements ValidatorContract
     /**
      * Get the Presence Verifier implementation.
      *
-     * @return \Illuminate\Validation\PresenceVerifierInterface
+     * @return \ConstantNull\Validation\PresenceVerifierInterface
      *
      * @throws \RuntimeException
      */
@@ -3042,7 +3042,7 @@ class Validator implements ValidatorContract
     /**
      * Set the Presence Verifier implementation.
      *
-     * @param  \Illuminate\Validation\PresenceVerifierInterface  $presenceVerifier
+     * @param  \ConstantNull\Validation\PresenceVerifierInterface  $presenceVerifier
      * @return void
      */
     public function setPresenceVerifier(PresenceVerifierInterface $presenceVerifier)

@@ -1,6 +1,6 @@
 <?php
 
-namespace Illuminate\Validation;
+namespace ConstantNull\Validation;
 
 /**
  * Provides default implementation of ValidatesWhenResolved contract.
@@ -26,7 +26,7 @@ trait ValidatesWhenResolvedTrait
     /**
      * Get the validator instance for the request.
      *
-     * @return \Illuminate\Validation\Validator
+     * @return \ConstantNull\Validation\Validator
      */
     protected function getValidatorInstance()
     {
@@ -36,10 +36,10 @@ trait ValidatesWhenResolvedTrait
     /**
      * Handle a failed validation attempt.
      *
-     * @param  \Illuminate\Validation\Validator  $validator
+     * @param  \ConstantNull\Validation\Validator  $validator
      * @return void
      *
-     * @throws \Illuminate\Validation\ValidationException
+     * @throws \ConstantNull\Validation\ValidationException
      */
     protected function failedValidation(Validator $validator)
     {
@@ -65,7 +65,7 @@ trait ValidatesWhenResolvedTrait
      *
      * @return void
      *
-     * @throws \Illuminate\Validation\UnauthorizedException
+     * @throws \ConstantNull\Validation\UnauthorizedException
      */
     protected function failedAuthorization()
     {

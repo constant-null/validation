@@ -1,5 +1,5 @@
 {
-    "name": "illuminate/validation",
+    "name": "contant-null/validation",
     "description": "The Illuminate Validation package.",
     "license": "MIT",
     "homepage": "http://laravel.com",
@@ -27,7 +27,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Illuminate\\Validation\\": "src/"
+            "ConstantNull\\Validation\\": "src/"
         }
     },
     "extra": {
