@@ -1,7 +1,6 @@
 <?php
 
 use Mockery as m;
-use Carbon\Carbon;
 use ConstantNull\Validation\Validator;
 use Symfony\Component\HttpFoundation\File\File;
 
@@ -1953,10 +1952,10 @@ class ValidationValidatorTest extends PHPUnit_Framework_TestCase
         $v = new Validator($trans, ['x' => ['2000-01-01']], ['x' => 'Before:2012-01-01']);
         $this->assertFalse($v->passes());
 
-        $v = new Validator($trans, ['x' => new Carbon('2000-01-01')], ['x' => 'Before:2012-01-01']);
+        $v = new Validator($trans, ['x' => new \DateTime('2000-01-01')], ['x' => 'Before:2012-01-01']);
         $this->assertTrue($v->passes());
 
-        $v = new Validator($trans, ['x' => [new Carbon('2000-01-01')]], ['x' => 'Before:2012-01-01']);
+        $v = new Validator($trans, ['x' => [new \DateTime('2000-01-01')]], ['x' => 'Before:2012-01-01']);
         $this->assertFalse($v->passes());
 
         $v = new Validator($trans, ['x' => '2012-01-01'], ['x' => 'After:2000-01-01']);
@@ -1965,10 +1964,10 @@ class ValidationValidatorTest extends PHPUnit_Framework_TestCase
         $v = new Validator($trans, ['x' => ['2012-01-01']], ['x' => 'After:2000-01-01']);
         $this->assertFalse($v->passes());
 
-        $v = new Validator($trans, ['x' => new Carbon('2012-01-01')], ['x' => 'After:2000-01-01']);
+        $v = new Validator($trans, ['x' => new \DateTime('2012-01-01')], ['x' => 'After:2000-01-01']);
         $this->assertTrue($v->passes());
 
-        $v = new Validator($trans, ['x' => [new Carbon('2012-01-01')]], ['x' => 'After:2000-01-01']);
+        $v = new Validator($trans, ['x' => [new \DateTime('2012-01-01')]], ['x' => 'After:2000-01-01']);
         $this->assertFalse($v->passes());
 
         $v = new Validator($trans, ['start' => '2012-01-01', 'ends' => '2013-01-01'], ['start' => 'After:2000-01-01', 'ends' => 'After:start']);
@@ -1986,7 +1985,7 @@ class ValidationValidatorTest extends PHPUnit_Framework_TestCase
         $v = new Validator($trans, ['x' => new DateTime('2000-01-01')], ['x' => 'Before:2012-01-01']);
         $this->assertTrue($v->passes());
 
-        $v = new Validator($trans, ['start' => new DateTime('2012-01-01'), 'ends' => new Carbon('2013-01-01')], ['start' => 'Before:ends', 'ends' => 'After:start']);
+        $v = new Validator($trans, ['start' => new DateTime('2012-01-01'), 'ends' => new \DateTime('2013-01-01')], ['start' => 'Before:ends', 'ends' => 'After:start']);
         $this->assertTrue($v->passes());
 
         $v = new Validator($trans, ['start' => '2012-01-01', 'ends' => new DateTime('2013-01-01')], ['start' => 'Before:ends', 'ends' => 'After:start']);
