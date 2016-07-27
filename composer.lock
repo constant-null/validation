@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a773437878dc654997a9a0860c0dae57",
-    "content-hash": "e065749893f5a57a81228ab982d0704e",
+    "hash": "5ee8ec4988997169d33bd6b12a42a1cf",
+    "content-hash": "818637f15ff30292dba1d43216001d38",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -75,60 +75,17 @@
             "time": "2016-05-12 17:23:41"
         },
         {
-            "name": "illuminate/container",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/illuminate/container.git",
-                "reference": "0bc8c26ee49e785a804a5bade588896536cd3f10"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/container/zipball/0bc8c26ee49e785a804a5bade588896536cd3f10",
-                "reference": "0bc8c26ee49e785a804a5bade588896536cd3f10",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/contracts": "5.4.*",
-                "php": ">=5.6.4"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "5.4-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Illuminate\\Container\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylorotwell@gmail.com"
-                }
-            ],
-            "description": "The Illuminate Container package.",
-            "homepage": "http://laravel.com",
-            "time": "2016-06-29 21:11:45"
-        },
-        {
             "name": "illuminate/contracts",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
-                "reference": "1645cb9e654a3b23eb72af204cfa573989b52d33"
+                "reference": "ca682e187f45860df7cdfda7cd158b83c28d4a2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/contracts/zipball/1645cb9e654a3b23eb72af204cfa573989b52d33",
-                "reference": "1645cb9e654a3b23eb72af204cfa573989b52d33",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/ca682e187f45860df7cdfda7cd158b83c28d4a2a",
+                "reference": "ca682e187f45860df7cdfda7cd158b83c28d4a2a",
                 "shasum": ""
             },
             "require": {
@@ -157,7 +114,7 @@
             ],
             "description": "The Illuminate Contracts package.",
             "homepage": "http://laravel.com",
-            "time": "2016-07-23 03:19:50"
+            "time": "2016-07-27 16:40:17"
         },
         {
             "name": "illuminate/support",
@@ -165,12 +122,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "8c1e198cbd9d2395ebe955966c0c26716e7e70e1"
+                "reference": "7b8c7b643f6e731189c4c951893d57d2656587dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/8c1e198cbd9d2395ebe955966c0c26716e7e70e1",
-                "reference": "8c1e198cbd9d2395ebe955966c0c26716e7e70e1",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/7b8c7b643f6e731189c4c951893d57d2656587dc",
+                "reference": "7b8c7b643f6e731189c4c951893d57d2656587dc",
                 "shasum": ""
             },
             "require": {
@@ -185,7 +142,6 @@
             },
             "suggest": {
                 "illuminate/filesystem": "Required to use the composer class (5.2.*).",
-                "jeremeamia/superclosure": "Required to be able to serialize closures (~2.2).",
                 "symfony/process": "Required to use the composer class (3.2.*).",
                 "symfony/var-dumper": "Required to use the dd function (3.2.*)."
             },
@@ -215,7 +171,7 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "http://laravel.com",
-            "time": "2016-07-26 00:30:54"
+            "time": "2016-07-27 04:39:14"
         },
         {
             "name": "paragonie/random_compat",

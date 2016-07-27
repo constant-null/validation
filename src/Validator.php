@@ -15,7 +15,6 @@ use BadMethodCallException;
 use InvalidArgumentException;
 use Illuminate\Support\Fluent;
 use Illuminate\Support\MessageBag;
-use Illuminate\Contracts\Container\Container;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Translation\TranslatorInterface;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -36,13 +35,6 @@ class Validator implements ValidatorContract
      * @var \ConstantNull\Validation\PresenceVerifierInterface
      */
     protected $presenceVerifier;
-
-    /**
-     * The container instance.
-     *
-     * @var \Illuminate\Contracts\Container\Container
-     */
-    protected $container;
 
     /**
      * The failed validation rules.
@@ -2912,7 +2904,7 @@ class Validator implements ValidatorContract
      * Register a custom validator message replacer.
      *
      * @param  string  $rule
-     * @param  \Closure|string  $replacer
+     * @param  \Closure
      * @return void
      */
     public function addReplacer($rule, $replacer)
@@ -3204,17 +3196,6 @@ class Validator implements ValidatorContract
     }
 
     /**
-     * Set the IoC container instance.
-     *
-     * @param  \Illuminate\Contracts\Container\Container  $container
-     * @return void
-     */
-    public function setContainer(Container $container)
-    {
-        $this->container = $container;
-    }
-
-    /**
      * Call a custom validator extension.
      *
      * @param  string  $rule
@@ -3247,7 +3228,7 @@ class Validator implements ValidatorContract
             list($class, $method) = [$callback, 'validate'];
         }
 
-        return call_user_func_array([$this->container->make($class), $method], $parameters);
+        return call_user_func_array([new $class(), $method], $parameters);
     }
 
     /**
@@ -3284,7 +3265,7 @@ class Validator implements ValidatorContract
     {
         list($class, $method) = explode('@', $callback);
 
-        return call_user_func_array([$this->container->make($class), $method], array_slice(func_get_args(), 1));
+        return call_user_func_array([new $class(), $method], array_slice(func_get_args(), 1));
     }
 
     /**
