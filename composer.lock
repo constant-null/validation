@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5ee8ec4988997169d33bd6b12a42a1cf",
-    "content-hash": "818637f15ff30292dba1d43216001d38",
+    "hash": "3f52fbf178b98c453bf20b1e252c1f70",
+    "content-hash": "2259954ddcbfa24d5f52b1f89c97179a",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -80,12 +80,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
-                "reference": "ca682e187f45860df7cdfda7cd158b83c28d4a2a"
+                "reference": "0abf6f98b136e62f93214a97fada9ecd45e2f7b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/contracts/zipball/ca682e187f45860df7cdfda7cd158b83c28d4a2a",
-                "reference": "ca682e187f45860df7cdfda7cd158b83c28d4a2a",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/0abf6f98b136e62f93214a97fada9ecd45e2f7b2",
+                "reference": "0abf6f98b136e62f93214a97fada9ecd45e2f7b2",
                 "shasum": ""
             },
             "require": {
@@ -114,7 +114,7 @@
             ],
             "description": "The Illuminate Contracts package.",
             "homepage": "http://laravel.com",
-            "time": "2016-07-27 16:40:17"
+            "time": "2016-07-28 03:34:45"
         },
         {
             "name": "illuminate/support",
@@ -122,12 +122,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "7b8c7b643f6e731189c4c951893d57d2656587dc"
+                "reference": "4564c364fcc01c054fec08fd1754cfdb588a315f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/7b8c7b643f6e731189c4c951893d57d2656587dc",
-                "reference": "7b8c7b643f6e731189c4c951893d57d2656587dc",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/4564c364fcc01c054fec08fd1754cfdb588a315f",
+                "reference": "4564c364fcc01c054fec08fd1754cfdb588a315f",
                 "shasum": ""
             },
             "require": {
@@ -171,7 +171,7 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "http://laravel.com",
-            "time": "2016-07-27 04:39:14"
+            "time": "2016-07-28 03:34:45"
         },
         {
             "name": "paragonie/random_compat",
@@ -332,70 +332,6 @@
                 "shim"
             ],
             "time": "2016-06-29 14:58:48"
-        },
-        {
-            "name": "symfony/translation",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/translation.git",
-                "reference": "188ed7f4ff485ceaf6e5aeeeb539194395c4de96"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/188ed7f4ff485ceaf6e5aeeeb539194395c4de96",
-                "reference": "188ed7f4ff485ceaf6e5aeeeb539194395c4de96",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.9",
-                "symfony/polyfill-mbstring": "~1.0"
-            },
-            "conflict": {
-                "symfony/config": "<2.8"
-            },
-            "require-dev": {
-                "psr/log": "~1.0",
-                "symfony/config": "~2.8|~3.0",
-                "symfony/intl": "~2.8|~3.0",
-                "symfony/yaml": "~2.8|~3.0"
-            },
-            "suggest": {
-                "psr/log": "To use logging capability in translator",
-                "symfony/config": "",
-                "symfony/yaml": ""
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.2-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Component\\Translation\\": ""
-                },
-                "exclude-from-classmap": [
-                    "/Tests/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony Translation Component",
-            "homepage": "https://symfony.com",
-            "time": "2016-07-26 08:08:27"
         }
     ],
     "packages-dev": [
