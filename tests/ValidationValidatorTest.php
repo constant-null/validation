@@ -86,7 +86,7 @@ class ValidationValidatorTest extends PHPUnit_Framework_TestCase
     {
         $v = new Validator(['name' => ''], ['name' => 'Required']);
         $this->assertFalse($v->passes());
-        $this->assertEquals('name.required', $v->messages()->first('name'));
+        $this->assertEquals('required', $v->messages()->first('name'));
     }
 
     public function testInlineValidationMessagesAreRespected()
@@ -363,7 +363,7 @@ class ValidationValidatorTest extends PHPUnit_Framework_TestCase
         // error message when passed multiple values (required_if:foo,bar,baz)
         $v = new Validator(['first' => 'dayle', 'last' => ''], ['last' => 'RequiredIf:first,taylor,dayle']);
         $this->assertFalse($v->passes());
-        $this->assertEquals('last.required_if', $v->messages()->first('last'));
+        $this->assertEquals('required_if', $v->messages()->first('last'));
     }
 
     public function testRequiredUnless()
@@ -386,7 +386,7 @@ class ValidationValidatorTest extends PHPUnit_Framework_TestCase
         // error message when passed multiple values (required_unless:foo,bar,baz)
         $v = new Validator(['first' => 'dayle', 'last' => ''], ['last' => 'RequiredUnless:first,taylor,sven']);
         $this->assertFalse($v->passes());
-        $this->assertEquals('last.required_unless', $v->messages()->first('last'));
+        $this->assertEquals('required_unless', $v->messages()->first('last'));
     }
 
     public function testValidateInArray()
@@ -404,7 +404,7 @@ class ValidationValidatorTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($v->passes());
 
         $v = new Validator(['foo' => [1, 2, 3], 'bar' => [1, 2]], ['foo.*' => 'in_array:bar.*']);
-        $this->assertEquals('foo.2.in_array', $v->messages()->first('foo.2'));
+        $this->assertEquals('in_array', $v->messages()->first('foo.2'));
     }
 
     public function testValidateConfirmed()
@@ -802,12 +802,12 @@ class ValidationValidatorTest extends PHPUnit_Framework_TestCase
         $v = new Validator(['name' => '3'], ['name' => 'Numeric|Min:5']);
         $this->assertFalse($v->passes());
         $v->messages()->setFormat(':message');
-        $this->assertEquals('name.min', $v->messages()->first('name'));
+        $this->assertEquals('min', $v->messages()->first('name'));
 
         $v = new Validator(['name' => 'asasdfadsfd'], ['name' => 'Size:2']);
         $this->assertFalse($v->passes());
         $v->messages()->setFormat(':message');
-        $this->assertEquals('name.size', $v->messages()->first('name'));
+        $this->assertEquals('size', $v->messages()->first('name'));
 
         $file = $this->getMock('Symfony\Component\HttpFoundation\File\File', ['getSize'], [__FILE__, false]);
         $file->expects($this->any())->method('getSize')->will($this->returnValue(4072));
@@ -815,7 +815,7 @@ class ValidationValidatorTest extends PHPUnit_Framework_TestCase
         $v->setFiles(['photo' => $file]);
         $this->assertFalse($v->passes());
         $v->messages()->setFormat(':message');
-        $this->assertEquals('photo.max', $v->messages()->first('photo'));
+        $this->assertEquals('max', $v->messages()->first('photo'));
     }
 
     public function testValidateIn()
@@ -1790,7 +1790,7 @@ class ValidationValidatorTest extends PHPUnit_Framework_TestCase
         });
         $this->assertFalse($v->passes());
         $v->messages()->setFormat(':message');
-        $this->assertEquals('name.foo', $v->messages()->first('name'));
+        $this->assertEquals('foo', $v->messages()->first('name'));
 
         $v = new Validator(['name' => 'taylor'], ['name' => 'foo_bar']);
         $v->addExtension('FooBar', function () {
@@ -1798,7 +1798,7 @@ class ValidationValidatorTest extends PHPUnit_Framework_TestCase
         });
         $this->assertFalse($v->passes());
         $v->messages()->setFormat(':message');
-        $this->assertEquals('name.foo_bar', $v->messages()->first('name'));
+        $this->assertEquals('foo_bar', $v->messages()->first('name'));
 
         $v = new Validator(['name' => 'taylor'], ['name' => 'foo_bar']);
         $v->addExtension('FooBar', function () {
@@ -1825,7 +1825,7 @@ class ValidationValidatorTest extends PHPUnit_Framework_TestCase
         $v->addExtension('foo', 'Utils@fail');
         $this->assertFalse($v->passes());
         $v->messages()->setFormat(':message');
-        $this->assertEquals('name.foo', $v->messages()->first('name'));
+        $this->assertEquals('foo', $v->messages()->first('name'));
     }
 
     public function testClassBasedCustomValidatorsUsingConventionalMethod()
@@ -1834,7 +1834,7 @@ class ValidationValidatorTest extends PHPUnit_Framework_TestCase
         $v->addExtension('foo', 'Utils');
         $this->assertFalse($v->passes());
         $v->messages()->setFormat(':message');
-        $this->assertEquals('name.foo', $v->messages()->first('name'));
+        $this->assertEquals('foo', $v->messages()->first('name'));
     }
 
     public function testCustomImplicitValidators()

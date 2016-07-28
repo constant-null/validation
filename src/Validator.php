@@ -1954,13 +1954,9 @@ class Validator implements ValidatorContract
     {
         $lowerRule = Str::snake($rule);
 
-        // We will just pull the default
-        // messages out of the trans
-        $key = "{$attribute}.{$lowerRule}";
-
         return $this->getInlineMessage(
             $attribute, $lowerRule, $this->fallbackMessages
-        ) ?: $key;
+        ) ?: $lowerRule;
     }
 
     /**
