@@ -1,15 +1,15 @@
 {
-    "name": "contant-null/validation",
+    "name": "constant-null/validation",
     "description": "The standalone version of Illuminate Validation package.",
     "license": "MIT",
     "require": {
         "php": ">=5.6.4",
-        "illuminate/support": "5.4.*",
-        "symfony/http-foundation": "3.2.*"
+        "illuminate/support": "5.2.*",
+        "symfony/http-foundation": "3.1.*"
     },
     "require-dev": {
         "mockery/mockery": "^0.9.5",
-        "phpunit/phpunit": "^4.8"
+        "phpunit/phpunit": "~4.8 || ~5.4"
     },
     "autoload": {
         "psr-4": {
