@@ -1,18 +1,7 @@
 {
     "name": "contant-null/validation",
-    "description": "The Illuminate Validation package.",
+    "description": "The standalone version of Illuminate Validation package.",
     "license": "MIT",
-    "homepage": "http://laravel.com",
-    "support": {
-        "issues": "https://github.com/laravel/framework/issues",
-        "source": "https://github.com/laravel/framework"
-    },
-    "authors": [
-        {
-            "name": "Taylor Otwell",
-            "email": "taylorotwell@gmail.com"
-        }
-    ],
     "require": {
         "php": ">=5.6.4",
         "illuminate/support": "5.4.*",
@@ -29,11 +18,8 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "5.4-dev"
+            "dev-master": "0.1-dev"
         }
-    },
-    "suggest": {
-        "illuminate/database": "Required to use the database presence verifier (5.4.*)."
     },
     "minimum-stability": "dev"
 }
